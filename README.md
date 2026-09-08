@@ -114,7 +114,13 @@ Two extra techniques were used to make sure the rare elite cases weren't ignored
 
 The loss function itself was the **Huber loss** (rather than plain Mean Squared Error). Huber loss behaves like a mean squared error for small mistakes but like a more forgiving mean absolute error for very large mistakes. This makes training more stable and less thrown off by extreme outlier performances in the data.
 
-$$L_{\delta}(e) = \begin{cases} \frac{1}{2} e^2 & \text{per } \vert{}e\vert{} \le \delta \\ \delta \cdot \left(\vert{}e\vert{} - \frac{1}{2} \delta\right) & \text{per } \vert{}e\vert{} > \delta \end{cases}$$
+$$
+L_{\delta}(y, \hat{y}) = 
+\begin{cases} 
+\frac{1}{2} (y - \hat{y})^2 & \text{for } |y - \hat{y}| \le \delta \\[10pt]
+\delta \cdot \left(|y - \hat{y}| - \frac{1}{2} \delta\right) & \text{for } |y - \hat{y}| > \delta 
+\end{cases}
+$$
 
 ### 3.4 Results
 
