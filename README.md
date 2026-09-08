@@ -117,7 +117,7 @@ The loss function itself was the **Huber loss** (rather than plain Mean Squared 
 $$
 L_{\delta}(y, \hat{y}) = 
 \begin{cases} 
-\frac{1}{2} (y - \hat{y})^2 & \text{for } |y - \hat{y}| \le \delta \\[10pt]
+\frac{1}{2} (y - \hat{y})^2 & \text{for } |y - \hat{y}| \le \delta \\
 \delta \cdot \left(|y - \hat{y}| - \frac{1}{2} \delta\right) & \text{for } |y - \hat{y}| > \delta 
 \end{cases}
 $$
